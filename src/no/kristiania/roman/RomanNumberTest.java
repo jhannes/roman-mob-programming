@@ -21,10 +21,16 @@ public class RomanNumberTest {
         assertEquals("III", toRoman(3));
     }
 
-    private String toRoman(int i) {
-        if (i==2) {
-            return "II";
+    @Test
+    void shouldConvert4ToIV() {
+        assertEquals("IV", toRoman(4));
+    }
+    private String toRoman(int number) {
+        String result = "";
+        for (int i = 0; i < number; i++) {
+            result += "I";
         }
-        return "I";
+
+        return result;
     }
 }
