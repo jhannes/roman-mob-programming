@@ -50,9 +50,14 @@ public class RomanNumberTest {
         assertEquals("XX", toRoman(20));
     }
 
+    @Test
+    void shouldConvert39ToXXXIX() {
+        assertEquals("XXXIX", toRoman(39));
+    }
+
     private String toRoman(int number) {
         String result = "";
-        if(number >= 10){
+        while(number >= 10){
             result += "X";
             number -= 10;
         }
