@@ -29,8 +29,15 @@ public class RomanNumberTest {
     void shouldConvert5ToV() {
         assertEquals("V", toRoman(5));
     }
+    @Test
+    void shouldConvert6ToVI() {
+        assertEquals("VI", toRoman(6));
+    }
     private String toRoman(int number) {
         String result = "";
+        if(number == 5){
+            return "V";
+        }
         if(number == 4){
             return "IV";
         }
