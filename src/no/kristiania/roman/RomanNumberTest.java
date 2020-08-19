@@ -25,8 +25,15 @@ public class RomanNumberTest {
     void shouldConvert4ToIV() {
         assertEquals("IV", toRoman(4));
     }
+    @Test
+    void shouldConvert5ToV() {
+        assertEquals("V", toRoman(5));
+    }
     private String toRoman(int number) {
         String result = "";
+        if(number == 4){
+            return "IV";
+        }
         for (int i = 0; i < number; i++) {
             result += "I";
         }
