@@ -37,15 +37,36 @@ public class RomanNumberTest {
     void shouldConvert9ToIX() {
         assertEquals("IX", toRoman(9));
     }
+    @Test
+    void shouldConvert10ToX() {
+        assertEquals("X", toRoman(10));
+    }
+    @Test
+    void shouldConvert14ToXIV() {
+        assertEquals("XIV", toRoman(14));
+    }
+    @Test
+    void shouldConvert20ToXX() {
+        assertEquals("XX", toRoman(20));
+    }
 
     private String toRoman(int number) {
         String result = "";
-        if(number == 4){
-            return "IV";
+        if(number >= 10){
+            result += "X";
+            number -= 10;
+        }
+        if(number >= 9){
+            result += "IX";
+            number -= 9;
         }
         if(number >= 5){
             result += "V";
             number -= 5;
+        }
+        if(number >= 4){
+            result += "IV";
+            number -= 4;
         }
         for (int i = 0; i < number; i++) {
             result += "I";
