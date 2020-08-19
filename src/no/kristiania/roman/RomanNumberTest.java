@@ -33,13 +33,19 @@ public class RomanNumberTest {
     void shouldConvert6ToVI() {
         assertEquals("VI", toRoman(6));
     }
+    @Test
+    void shouldConvert9ToIX() {
+        assertEquals("IX", toRoman(9));
+    }
+
     private String toRoman(int number) {
         String result = "";
-        if(number == 5){
-            return "V";
-        }
         if(number == 4){
             return "IV";
+        }
+        if(number >= 5){
+            result += "V";
+            number -= 5;
         }
         for (int i = 0; i < number; i++) {
             result += "I";
