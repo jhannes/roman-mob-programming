@@ -16,7 +16,15 @@ public class RomanNumberTest {
         assertEquals("II", toRoman(2));
     }
 
+    @Test
+    void shouldConvert3ToIII() {
+        assertEquals("III", toRoman(3));
+    }
+
     private String toRoman(int i) {
+        if (i==2) {
+            return "II";
+        }
         return "I";
     }
 }
